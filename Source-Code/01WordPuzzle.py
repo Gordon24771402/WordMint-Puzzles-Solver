@@ -12,68 +12,121 @@ data = np.array(data)
 
 # 02: Return Word
 while True:
-    wordSearch = input('Enter a Word: ').lower()
-    if wordSearch == '':
+    wordExpect = input("Enter a Word: ").lower()
+    if wordExpect == '':
         break
 
-    startIndex = np.where(data == wordSearch[0])
+    startIndex = np.where(data == wordExpect[0])
+
+    # Left
     for mainCoordinate in range(len(startIndex[0])):
         x = startIndex[0][mainCoordinate]
         y = startIndex[1][mainCoordinate]
+        wordSearch = ''
 
-        if x == 0 and y == 0:
-            peripheral = np.array([
-                '', '', '',
-                '', data[x][y + 1],
-                '', data[x + 1][y], data[x + 1][y + 1]
-            ])
-        elif x == 0 and y == len(data[0]) - 1:
-            peripheral = np.array([
-                '', '', '',
-                data[x][y - 1], '',
-                data[x + 1][y - 1], data[x + 1][y], ''
-            ])
-        elif x == len(data) - 1 and y == len(data[0]) - 1:
-            peripheral = np.array([
-                data[x - 1][y - 1], data[x - 1][y], '',
-                data[x][y - 1], '',
-                '', '', ''
-            ])
-        elif x == len(data) - 1 and y == 0:
-            peripheral = np.array([
-                '', data[x - 1][y], data[x - 1][y + 1],
-                '', data[x][y + 1],
-                '', '', ''
-            ])
-        elif x == 0:
-            peripheral = np.array([
-                '', '', '',
-                data[x][y - 1], data[x][y + 1],
-                data[x + 1][y - 1], data[x + 1][y], data[x + 1][y + 1]
-            ])
-        elif y == len(data[0]) - 1:
-            peripheral = np.array([
-                data[x - 1][y - 1], data[x - 1][y], '',
-                data[x][y - 1], '',
-                data[x + 1][y - 1], data[x + 1][y], ''
-            ])
-        elif x == len(data) - 1:
-            peripheral = np.array([
-                data[x - 1][y - 1], data[x - 1][y], data[x - 1][y + 1],
-                data[x][y - 1], data[x][y + 1],
-                '', '', ''
-            ])
-        elif y == 0:
-            peripheral = np.array([
-                '', data[x - 1][y], data[x - 1][y + 1],
-                '', data[x][y + 1],
-                '', data[x + 1][y], data[x + 1][y + 1]
-            ])
-        else:
-            peripheral = np.array([
-                data[x - 1][y - 1], data[x - 1][y], data[x - 1][y + 1],
-                data[x][y - 1], data[x][y + 1],
-                data[x + 1][y - 1], data[x + 1][y], data[x + 1][y + 1]
-            ])
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x][y - i]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
 
-        print(peripheral)
+    # Right
+    for mainCoordinate in range(len(startIndex[0])):
+        x = startIndex[0][mainCoordinate]
+        y = startIndex[1][mainCoordinate]
+        wordSearch = ''
+
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x][y + i]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
+
+    # Up
+    for mainCoordinate in range(len(startIndex[0])):
+        x = startIndex[0][mainCoordinate]
+        y = startIndex[1][mainCoordinate]
+        wordSearch = ''
+
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x - i][y]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
+
+    # Down
+    for mainCoordinate in range(len(startIndex[0])):
+        x = startIndex[0][mainCoordinate]
+        y = startIndex[1][mainCoordinate]
+        wordSearch = ''
+
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x + i][y]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
+
+    # Up-Left
+    for mainCoordinate in range(len(startIndex[0])):
+        x = startIndex[0][mainCoordinate]
+        y = startIndex[1][mainCoordinate]
+        wordSearch = ''
+
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x - i][y - i]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
+
+    # Up-Right
+    for mainCoordinate in range(len(startIndex[0])):
+        x = startIndex[0][mainCoordinate]
+        y = startIndex[1][mainCoordinate]
+        wordSearch = ''
+
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x - i][y + i]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
+
+    # Down-Left
+    for mainCoordinate in range(len(startIndex[0])):
+        x = startIndex[0][mainCoordinate]
+        y = startIndex[1][mainCoordinate]
+        wordSearch = ''
+
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x + i][y - i]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
+
+    # Down-Right
+    for mainCoordinate in range(len(startIndex[0])):
+        x = startIndex[0][mainCoordinate]
+        y = startIndex[1][mainCoordinate]
+        wordSearch = ''
+
+        try:
+            for i in range(len(wordExpect)):
+                wordSearch += data[x + i][y + i]
+            if wordSearch == wordExpect:
+                print(wordSearch)
+        except:
+            wordSearch = ''
+
