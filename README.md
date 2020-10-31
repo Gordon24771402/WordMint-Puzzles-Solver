@@ -2,13 +2,21 @@
  Using Python to Solve for WordMint Puzzles
 
 V E N S B F S T N E M I D E P M I C P X X O K D
+
 I D C R S R O T C A F E N E B P R O M T R E V A
+
 N I Y L E T A N I M I R C S I D N I T J E Y D D
+
 L N P H I M A I V H J K D E C N A N E T N U O C
+
 X C K P E D L F B U R I M P E R T I N E N T Y V
+
 B L V N R L X A F R H V U O R K I O C U L L E D
+
 N I V B O O B P U A I Z X W B A N K Z N U E P B
+
 D N Q S Q I C I R T B D I S C E R N M E N T U Z
+
 R A N I K A T U S E C I X E M A C I A T E D O Z
 A T X Y V E D C R N C E L A G A D Z M W N U N M
 U I Z U R N Y O N E E E F I Y X E W V X C E N R
